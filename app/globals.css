@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 30 58% 95%;
+  --foreground: 240 5% 13%;
+  --card: 30 58% 95%;
+  --card-foreground: 240 5% 13%;
+  --popover: 30 58% 95%;
+  --popover-foreground: 240 5% 13%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 30 58% 88%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 30 58% 88%;
+  --muted-foreground: 240 3.8% 42%;
+  --accent: 30 58% 88%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 30 58% 95%;
+  --border: 30 58% 85%;
+  --input: 240 4.9% 83.9%;
+  --ring: 334 96% 71%;
+  --radius: 0.5rem;
+  --lineHeight: 22.5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 5% 13%;
+    --foreground: 30 58% 95%;
+    --card: 240 5% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 5% 22%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5.9% 10%;
+    --muted-foreground: 240 4.4% 58%;
+    --accent: 240 5.9% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 22%;
+    --input: 240 5% 22%;
+    --ring: 44 94% 68%;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans text-foreground bg-background text-base;
+  }
+  code {
+    @apply font-mono bg-muted rounded-sm px-1 py-0.5;
+  }
+  a {
+    @apply text-foreground underline decoration-foreground/30 rounded-sm underline-offset-4 
+    outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring 
+    transition-all ease-out duration-300 hover:underline-offset-4 hover:decoration-wavy 
+    hover:decoration-[#A04163] dark:hover:decoration-[#FAD161];
+  }
+  a.external {
+    @apply hover:cursor-ne-resize leading-7;
+  }
+  .caption {
+    @apply text-xs text-[#A04163] dark:text-[#FAD161] uppercase tracking-widest font-mono font-bold;
+  }
+  .social-icon {
+    @apply w-4 fill-muted-foreground transition ease-out;
+  }
+  /* This is to solve for focus issues on Safari mobile (page auto zooms when user focuses on the input) */
+  input[type="text"] {
+    font-size: inherit;
+  }
+}
+
+::selection {
+  color: hsl(339, 42%, 44%);
+  background-color: hsla(339, 42%, 44%, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    color: hsl(44, 94%, 68%);
+    background-color: hsla(44, 94%, 68%, 0.1);
+  }
+}
