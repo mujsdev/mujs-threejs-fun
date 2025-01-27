@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "mujs threejs fun",
   description:
-    "My playground projects where I mess around with three.js and have fun",
+    "My playground projects where I mess around with three.js and have fun. Skills scored from threejs-journey.com",
 };
 
 export default function RootLayout({
