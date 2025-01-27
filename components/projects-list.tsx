@@ -6,7 +6,7 @@ export function ProjectsList() {
   return (
     <div className="space-y-2">
       <h2 className="caption">mujs threejs fun</h2>
-      <ol className="space-y-4 md:space-y-0">
+      <ol className="space-y-6">
         {projects.map((project, index) => {
           return (
             <li className="space-y-1" key={index}>
